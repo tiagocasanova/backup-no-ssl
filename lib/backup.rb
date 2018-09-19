@@ -18,7 +18,7 @@ require 'excon'
 Excon.defaults[:debug_response] = true
 # Excon should not retry failed requests. We handle that.
 Excon.defaults[:middlewares].delete(Excon::Middleware::Idempotent)
-Excon.defaults[:ssl_verify_peer] = false
+#Excon.defaults[:ssl_verify_peer] = false
 
 ##
 # The Backup Ruby Gem

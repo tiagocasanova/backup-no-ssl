@@ -113,6 +113,9 @@ module Backup
         }
         opts.merge!(:ssl_verify_peer => ssl_verify_peer) unless ssl_verify_peer.nil?
         opts.merge!(:ssl_ca_file => ssl_ca_file) if ssl_ca_file
+        
+        puts uri.inspect
+        puts opts.inspect
 
         Excon.post(uri, opts)
       end
