@@ -132,7 +132,13 @@ module Backup
               :aws_secret_access_key  => secret_access_key
             )
           end
+          
           opts.merge!(fog_options || {})
+          
+          opts.merge!(:ssl_verify_peer => false, :use_ssl => false)
+
+          puts opts.inspect
+
           conn = Fog::Storage.new(opts)
           conn.sync_clock
           conn
